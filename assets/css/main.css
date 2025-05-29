@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme static {
+  --color-primary-50: oklch(98.77% 0.002 264.53);
+  --color-primary-100: oklch(97.53% 0.003 264.53);
+  --color-primary-200: oklch(96.7% 0.003 264.542);
+  --color-primary-300: oklch(90.93% 0.019 262.61);
+  --color-primary-400: #b4c4de;
+  --color-primary-500: #83a1ca; 
+  --color-primary-600: #6287b5;
+  --color-primary-700: #416d9f;
+  --color-primary-800: #225283;
+  --color-primary-900: #093a66;
+  --color-primary-950: #002447;
+  
+
+  /* 绿色色板 (Green Theme Palette) */
+  --color-green-neutral-bg: #f4faf5; 
+  --color-green-neutral-surface: #f9fdfa; 
+  --color-green-primary: #4CAF50;
+  --color-green-primary-dark: #388E3C;
+  --color-green-primary-light: #C8E6C9;
+  --color-green-dark-bg: #445042;
+
+}
+
+
+:root {
+  --theme-text: var(--color-gray-500); 
+  --theme-accent: var(--color-blue-accent);
+  --theme-bg: var(--color-green-neutral-surface); 
+  --theme-surface: var(--color-green-neutral-bg);
+  --theme-border: var(--color-gray-300);
+  --theme-primary-DEFAULT: var(--color-green-600);
+  --theme-primary-hover: var(--color-green-primary-light);
+  --theme-primary-active: var(--color-green-primary-dark);
+  --theme-primary-text: white;
+}
+
+.light { 
+  --theme-bg: var(--color-gray-50);
+  --theme-surface: white; 
+  --theme-text: var(--color-gray-900);
+  --theme-border: var(--color-gray-200);
+  --theme-accent: var(--color-primary-400); 
+  --theme-primary-DEFAULT: var(--color-primary-500); 
+  --theme-primary-hover: var(--color-primary-600);
+  --theme-primary-active: var(--color-primary-700);
+  --theme-primary-text: white; 
+}
+
+.xrj {
+  --theme-text: var(--color-gray-500); /* 文本色 */
+  --theme-accent: var(--color-blue-accent); /* 强调色 */
+  --theme-bg: var(--color-green-neutral-surface); /* 背景色 */
+  --theme-surface: var(--color-green-neutral-bg); /* 表面色 */
+  --theme-border: var(--color-gray-300);  /* 边框色 */
+  --theme-primary-DEFAULT: var(--color-green-600); /* 主题的主色 */
+  --theme-primary-hover: var(--color-green-primary-light); /* 主色悬停状态 */
+  --theme-primary-active: var(--color-green-primary-dark); /* 主色激活状态 */
+  --theme-primary-text: white; /* 主色上的文本颜色 */
+  --theme-dark-bg: var(--color-green-dark-bg); /* 深色背景 */
+}
+
+@theme inline {
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-surface: var(--theme-surface);
+  --color-theme-text: var(--theme-text);
+  --color-theme-border: var(--theme-border);
+  --color-theme-accent: var(--theme-accent);
+  --color-theme-primary: var(--theme-primary-DEFAULT);
+  --color-theme-primary-hover: var(--theme-primary-hover);
+  --color-theme-primary-active: var(--theme-primary-active);
+  --color-theme-primary-text: var(--theme-primary-text);
+  --color-theme-dark-bg: var(--theme-dark-bg);
+}
+
+@keyframes playing-mask-animation {
+  0%   {
+    width: 0%;
+    background-color: rgba(0,0,0,0.2);
+    opacity: 1;
+  }
+  99.9% {
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    opacity: 0.3;
+  }
+  100% {
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    opacity: 0;
+  }
+}
+
+.animate-playing-mask {
+  animation: playing-mask-animation linear forwards;
+}
+
+@import "@nuxt/ui";
+
+/* 全局过渡动画 */
+body, div, header, aside, main, footer, button, a, input, textarea, select { 
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+
+@supports (view-transition-name: root) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.4s; 
+    animation-timing-function: ease-in-out;
+  }
+}
