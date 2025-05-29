@@ -6,6 +6,7 @@ const rawVoicesData = [
     { messages: { zh: 'tui' }, path: 'tui.mp3', tag: '真实的奖励' },
     { messages: { zh: '你也想做小狗吗' }, path: '你也想做小狗吗.mp3', tag: '真实的奖励' },
     { messages: { zh: '惩罚你' }, path: '想让我惩罚你.mp3', tag: '真实的奖励' },
+    { messages: { zh: '这你就不行了？' }, path: '这你就不行了.mp3', tag: '真实的奖励' },
     { messages: { zh: '一窝的变态' }, path: '一窝的变态.mp3', tag: '真实的奖励' },
     { messages: { zh: '小孩发脾气' }, path: '小孩发脾气.mp3', tag: '真实的奖励' },
 
@@ -17,6 +18,7 @@ const rawVoicesData = [
     { messages: { zh: '爽到了' }, path: '爽到了.mp3', tag: '泡泡名言' },
     
     
+    { messages: { zh: '凤哼' }, path: '凤哼.mp3', tag: '怪叫' },
     { messages: { zh: '哼? 哼!' }, path: '哼.mp3', tag: '怪叫' },
     { messages: { zh: '呱' }, path: '呱.mp3', tag: '怪叫' },
     { messages: { zh: '哇哦哇哦哇哦' }, path: '哇哦哇哦哇哦.mp3', tag: '怪叫' },
